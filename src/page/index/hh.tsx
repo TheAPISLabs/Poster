@@ -11,7 +11,6 @@ import styled from "styled-components";
 // import web3 from "src/utils/web3.js";
 // import BigNumber from "bignumber.js";
 import ContractAddress from "src/utils/contract";
-
 import "./index.css";
 // import congratsImgs from "../../assets/Congrats.gif";
 import WillImgs from "../../assets/APIS-logo 1.png";

@@ -1,0 +1,30 @@
+{
+  "id": "3461672",
+  "name": "test",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5387583",
+      "name": "箭头_向右",
+      "font_class": "jiantou_xiangyou",
+      "unicode": "eb08",
+      "unicode_decimal": 60168
+    },
+    {
+      "icon_id": "30237885",
+      "name": "icon_添加",
+      "font_class": "icon_tianjia",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "30237887",
+      "name": "icon_sign out (1)",
+      "font_class": "a-icon_signout1",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    }
+  ]
+}

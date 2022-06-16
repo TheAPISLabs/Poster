@@ -1,16 +1,37 @@
 {
-  "id": "3461672",
-  "name": "test",
+  "id": "3453122",
+  "name": "staking",
   "font_family": "iconfont",
   "css_prefix_text": "icon-",
   "description": "",
   "glyphs": [
     {
-      "icon_id": "5387583",
-      "name": "箭头_向右",
-      "font_class": "jiantou_xiangyou",
-      "unicode": "eb08",
-      "unicode_decimal": 60168
+      "icon_id": "3876491",
+      "name": "discord",
+      "font_class": "discord",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "10031201",
+      "name": "推特",
+      "font_class": "tuite",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "27365309",
+      "name": "telegram",
+      "font_class": "telegram",
+      "unicode": "ec25",
+      "unicode_decimal": 60453
+    },
+    {
+      "icon_id": "30237887",
+      "name": "icon_sign out (1)",
+      "font_class": "a-icon_signout1",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
     },
     {
       "icon_id": "30237885",
@@ -20,11 +41,11 @@
       "unicode_decimal": 58893
     },
     {
-      "icon_id": "30237887",
-      "name": "icon_sign out (1)",
-      "font_class": "a-icon_signout1",
-      "unicode": "e60f",
-      "unicode_decimal": 58895
+      "icon_id": "5387583",
+      "name": "箭头_向右",
+      "font_class": "jiantou_xiangyou",
+      "unicode": "eb08",
+      "unicode_decimal": 60168
     }
   ]
 }

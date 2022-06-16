@@ -4,7 +4,7 @@ import Column from "src/components/Column";
 import styled from "styled-components";
 import "./index.css";
 import { isMobile } from "src/helpers/utilities";
-
+import Whereabouts from "../../components/Whereabouts";
 interface IHome {
   killSession: () => void;
   connected: boolean;
@@ -115,6 +115,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
     <>
       <PosterWrap>
         <Column maxWidth={1000}>
+          <Whereabouts />
           <PosterTitle>to da moon</PosterTitle>
           <PosterTitle>to the moon and back!😓</PosterTitle>
           <ShareBtn>Share</ShareBtn>

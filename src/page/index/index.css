@@ -16,3 +16,9 @@
   height: 406px;
   background-color: #161426;
 }
+.Down {
+  width: 200px;
+  transform: rotate(45deg);
+  position: absolute;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}

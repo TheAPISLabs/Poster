@@ -175,7 +175,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
     if (!account) {
       return;
     }
-    getPosterData({ address: "0x2d4ba8bcaef93246c32ee889a3231cb385c67738" }).then(res => {
+    getPosterData({ address: account }).then(res => {
       console.log(res);
       setHolderCnt(res.data.data.holderCnt);
       setWorth(res.data.data.worth);

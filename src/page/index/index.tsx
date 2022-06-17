@@ -27,7 +27,7 @@ interface IHome {
 const PosterWrap = styled.div`
   background: #161426;
   min-height: calc(100vh - 99px);
-  padding-top: 200px;
+  padding-top: 100px;
 `;
 const MPosterWrap = styled.div`
   background: #161426;
@@ -88,20 +88,20 @@ const MShareBtn = styled.div`
 `;
 const FoodShare = styled.div`
   display: flex;
-  width: 200px;
+  width: 100px;
   margin-top: 190px;
   margin-left: -600px;
 `;
 const MFoodShare = styled.div`
   display: flex;
   width: 100px;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-left: -150px;
 `;
 const Link = styled.div`
   font-size: 28px;
   color: #fff;
-  margin-left: 30px;
+  ≠≠margin-left: 30px;
 `;
 const MLink = styled.div`
   font-size: 14px;
@@ -175,7 +175,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
     if (!account) {
       return;
     }
-    getPosterData({ address: "0xbe0eb53f46cd790cd13851d5eff43d12404d33e8" }).then(res => {
+    getPosterData({ address: "0x2d4ba8bcaef93246c32ee889a3231cb385c67738" }).then(res => {
       console.log(res);
       setHolderCnt(res.data.data.holderCnt);
       setWorth(res.data.data.worth);
@@ -198,7 +198,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
           // text
           {
             type: "text",
-            content: res.data.data.holderCnt,
+            content: (res.data.data.yield * 100).toFixed(3).slice(0, -1) + "%",
             //
             fontSize: 50,
             color: "#f7f7f7",
@@ -225,7 +225,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
           },
           {
             type: "text",
-            content: (res.data.data.yield * 100).toFixed(3).slice(0, -1) + "%",
+            content: res.data.data.holderCnt,
             fontSize: 50,
             color: "#f7f7f7",
             top: 340,
@@ -249,8 +249,12 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
     <>
       <MPosterWrap>
         <Column maxWidth={279}>
-          <MPosterTitle>to da moon</MPosterTitle>
-          <MPosterTitle>to the moon and back!😓</MPosterTitle>
+          <MPosterTitle>
+            To the moon and back 😓
+            <br />
+            Connect now 👀 to get your 💩 #loser poster 🤣 and share to your 👬 #loser frens 👭
+          </MPosterTitle>
+
           <MShareBtn
             style={{
               cursor: !holderCnt && !worth && !yields ? "no-drop" : "pointer",
@@ -298,8 +302,11 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
       <PosterWrap>
         <Column maxWidth={1000}>
           <Whereabouts />
-          <PosterTitle>to da moon</PosterTitle>
-          <PosterTitle>to the moon and back!😓</PosterTitle>
+          <PosterTitle>
+            To the moon and back 😓
+            <br />
+            Connect now 👀 to get your 💩 #loser poster 🤣 and share to your 👬 #loser frens 👭
+          </PosterTitle>
           <ShareBtn
             style={{
               cursor: !holderCnt && !worth && !yields ? "no-drop" : "pointer",

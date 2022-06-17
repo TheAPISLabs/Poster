@@ -102,11 +102,15 @@ const Link = styled.div`
   font-size: 28px;
   color: #fff;
   ≠≠margin-left: 30px;
+  position: relative;
+  z-index: 100;
 `;
 const MLink = styled.div`
   font-size: 14px;
   color: #fff;
   margin-left: 30px;
+  position: relative;
+  z-index: 100;
 `;
 const Images = styled.img``;
 const Down = styled.div`

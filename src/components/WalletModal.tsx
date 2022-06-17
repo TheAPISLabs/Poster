@@ -55,7 +55,7 @@ const ArrowImage = styled.img`
 const ModalTitle = styled.p`
   font-weight: 600;
   font-size: 36px;
-  line-height: 24px;
+  line-height: 36px;
   color: #fcfcfd;
   margin-bottom: 66px;
 `;
@@ -82,7 +82,7 @@ const WalletModal = ({ isShowModal, connect, setIsShowModal, fetching }: IWallet
         setIsShowModal(false);
       }}
     >
-      <ModalTitle>connect your wallet</ModalTitle>
+      <ModalTitle>Connect your wallet</ModalTitle>
       <MetamaskConnect setIsShow={setIsShowModal} triedEager={triedEager} />
       <SConnectButton
         onClick={() => {

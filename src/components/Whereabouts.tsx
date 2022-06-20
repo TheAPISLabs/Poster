@@ -39,6 +39,7 @@ const Dowmzero = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -54,6 +55,7 @@ const DowmOne = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -68,6 +70,7 @@ const Dowmtwo = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -82,6 +85,7 @@ const Dowmthree = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -96,6 +100,7 @@ const Dowmfour = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -110,6 +115,7 @@ const Dowmfive = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -124,6 +130,7 @@ const Dowmsix = styled.img`
     to {
       top: calc(100% - -683px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -138,6 +145,7 @@ const Dowmseven = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -152,6 +160,7 @@ const Dowmeight = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -166,6 +175,7 @@ const Dowmnine = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -180,6 +190,7 @@ const Dowmten = styled.img`
     to {
       top: calc(100% - -111px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -194,6 +205,7 @@ const Dowmeleven = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -208,6 +220,7 @@ const Dowmtwelve = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -222,6 +235,7 @@ const Dowmthirteen = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -236,6 +250,7 @@ const Dowmfourteen = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -250,6 +265,7 @@ const Dowmfifteen = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -264,6 +280,7 @@ const Dowmsixteen = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -278,6 +295,7 @@ const Dowmseventeen = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -292,6 +310,7 @@ const Dowmeighteen = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -306,6 +325,7 @@ const Dowmnineteen = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -320,6 +340,7 @@ const Dowmtwenty = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -334,6 +355,7 @@ const Dowmtwentyone = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -348,6 +370,7 @@ const Dowmtwentytwo = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -362,6 +385,7 @@ const Dowmtwentythree = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -376,6 +400,7 @@ const Dowmtwentyfour = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;
@@ -390,6 +415,7 @@ const Dowmtwentyfive = styled.img`
     to {
       top: calc(100% - 75px);
       opacity: 0;
+      display: none;
     }
   }
 `;

@@ -7,7 +7,7 @@ import { isMobile } from "src/helpers/utilities";
 import Whereabouts from "../../components/Whereabouts";
 // @ts-ignore
 import CanvasPoster from "react-canvas-poster";
-import Modal from "../../components/Modal";
+// import Modal from "../../components/Modal";
 import axios from "axios";
 import { useWeb3React } from "@web3-react/core";
 const DefaultUrl = "https://api.hook.cool:8890";
@@ -62,12 +62,14 @@ const ShareBtn = styled.div`
   font-weight: 600;
   text-align: center;
   line-height: 46px;
-  margin-top: 160px;
   cursor: pointer;
   font-family: "iconfont";
   &:hover {
     opacity: 0.5;
   }
+  margin-left: 30px;
+  positione: relative;
+  z-index: 999;
 `;
 const MShareBtn = styled.div`
   width: 198px;
@@ -79,58 +81,72 @@ const MShareBtn = styled.div`
   font-weight: 600;
   text-align: center;
   line-height: 46px;
-  margin-top: 160px;
   cursor: pointer;
   font-family: "iconfont";
   &:hover {
     opacity: 0.5;
   }
-`;
-const FoodShare = styled.div`
-  display: flex;
-  width: 100px;
-  margin-top: 190px;
-  margin-left: -600px;
-`;
-const MFoodShare = styled.div`
-  display: flex;
-  width: 100px;
-  margin-top: 100px;
-  margin-left: -150px;
-`;
-const Link = styled.div`
-  font-size: 28px;
-  color: #fff;
-  ≠≠margin-left: 30px;
-  position: relative;
-  z-index: 100;
-`;
-const MLink = styled.div`
-  font-size: 14px;
-  color: #fff;
   margin-left: 30px;
-  position: relative;
-  z-index: 100;
+  positione: relative;
+  z-index: 999;
 `;
-const Images = styled.img``;
+// const FoodShare = styled.div`
+//   display: flex;
+//   width: 100px;
+//   margin-top: 190px;
+//   margin-left: -600px;
+// `;
+// const MFoodShare = styled.div`
+//   display: flex;
+//   width: 100px;
+//   margin-top: 100px;
+//   margin-left: -150px;
+// `;
+// const Link = styled.div`
+//   font-size: 28px;
+//   color: #fff;
+//   ≠≠margin-left: 30px;
+// `;
+// const MLink = styled.div`
+//   font-size: 14px;
+//   color: #fff;
+//   margin-left: 30px;
+// `;
+const Images = styled.img`
+  margin-top: 50px;
+`;
 const Down = styled.div`
-  font-size: 14px;
-  color: #fff;
-  width: 120px;
-  height: 40px;
-
+  width: 198px;
+  height: 46px;
   border-radius: 18px;
   background: linear-gradient(180deg, rgba(159, 107, 244, 1) 0%, rgba(102, 57, 229, 1) 100%);
   color: rgba(255, 255, 255, 1);
   font-size: 28px;
   font-weight: 600;
   text-align: center;
-  line-height: 40px;
+  line-height: 46px;
   cursor: pointer;
-  margin: 0 auto;
-  margin-top: 10px;
+  font-family: "iconfont";
+  &:hover {
+    opacity: 0.5;
+  }
+  positione: relative;
+  z-index: 999;
 `;
 
+const Loading = styled.div`
+  -webkit-animation: animal 4s infinite linear;
+  -webkit-transform-origin: center center;
+  -ms-transform-origin: center center;
+  transform-origin: center center;
+  color: #fff;
+  font-size: 80px;
+`;
+
+const BtnGroup = styled.div`
+  display: flex;
+  margin: 40px 0;
+`;
 const dataURLtoBlob = (dataurl: string) => {
   // @ts-ignore
   const arr = dataurl.split(",");
@@ -157,6 +173,15 @@ const downloadFile = (url: string, name = "What's the fuvk") => {
   clickEvent.initEvent("click", true, true);
   a.dispatchEvent(clickEvent);
 };
+export function formatNumber(num: number) {
+  console.log((num / 1e3).toFixed(1) + "k");
+
+  return num >= 1e3
+    ? num >= 1e6
+      ? (num / 1e6).toFixed(1) + "M"
+      : (num / 1e3).toFixed(1) + "k"
+    : num;
+}
 
 const downloadFileByBase64 = (base64: any, name: string | undefined) => {
   // @ts-ignore
@@ -184,6 +209,8 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
       setHolderCnt(res.data.data.holderCnt);
       setWorth(res.data.data.worth);
       setYields(res.data.data.yield);
+      console.log(res.data.data.worth);
+
       setDrawData({
         width: 360,
         height: 667,
@@ -202,7 +229,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
           // text
           {
             type: "text",
-            content: (res.data.data.yield * 100).toFixed(3).slice(0, -1) + "%",
+            content: (res.data.data.yield * 100).toFixed(5).slice(0, -3) + "%",
             //
             fontSize: 50,
             color: "#f7f7f7",
@@ -216,7 +243,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
           },
           {
             type: "text",
-            content: res.data.data.worth,
+            content: "$" + formatNumber(Number(res.data.data.worth)),
             fontSize: 50,
             color: "#f7f7f7",
             top: 280,
@@ -229,11 +256,11 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
           },
           {
             type: "text",
-            content: res.data.data.holderCnt,
-            fontSize: 50,
+            content: formatNumber(res.data.data.holderCnt),
+            fontSize: 45,
             color: "#f7f7f7",
-            top: 340,
-            left: 130,
+            top: 350,
+            left: 120,
             width: 200,
             lineNum: 1,
             lineHeight: 20,
@@ -247,42 +274,59 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
   }, [account]);
 
   const [drawData, setDrawData] = useState(null as any);
-  const [isShowImg, setIsShowImg] = useState(false);
+  //   const [isShowImg, setIsShowImg] = useState(false);
   const [imgDetail, setImgDetail] = useState("");
   return isMobile() ? (
     <>
       <MPosterWrap>
         <Column maxWidth={279}>
           <MPosterTitle>
-            To the moon and back 😓
+            To the moon and back 😅
             <br />
-            Connect now 👀 to get your 💩 #loser poster 🤣 and share to your 👬 #loser frens 👭
+            Connect now 👀 to get your 💩 #loser poster 🤣 and share with your 👬 #loser frens 👭
           </MPosterTitle>
 
-          <MShareBtn
-            style={{
-              cursor: !holderCnt && !worth && !yields ? "no-drop" : "pointer",
-            }}
-            onClick={() => {
-              if (!holderCnt && !worth && !yields) {
-                return;
-              }
-              setIsShowImg(true);
-            }}
-          >
-            Share
-          </MShareBtn>
           {!drawData ? (
             <></>
           ) : (
-            <CanvasPoster
-              drawData={drawData}
-              success={(res: any) => {
-                setImgDetail(res);
-              }}
-            />
+            <>
+              <CanvasPoster
+                drawData={drawData}
+                success={(res: any) => {
+                  setImgDetail(res);
+                }}
+              />
+              <Images src={imgDetail} alt="" />
+              <BtnGroup>
+                <Down
+                  onClick={() => {
+                    downloadFileByBase64(imgDetail, "share");
+                  }}
+                >
+                  Download
+                </Down>
+                <MShareBtn
+                  style={{
+                    cursor:
+                      holderCnt === "" && worth === "" && yields === "" ? "no-drop" : "pointer",
+                  }}
+                  onClick={() => {
+                    if (holderCnt === "" && worth === "" && yields === "") {
+                      return;
+                    }
+                    window.open(
+                      `https://twitter.com/intent/tweet?url=Down bad, huh? Go check https://www.hook.cool/poster have some fun `,
+                      `_blank`,
+                      `width=600, height=450, toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, top=100,left=350`,
+                    );
+                  }}
+                >
+                  Share
+                </MShareBtn>
+              </BtnGroup>
+            </>
           )}
-          <MFoodShare>
+          {/* <MFoodShare>
             <MLink
               onClick={() => {
                 window.open(
@@ -296,8 +340,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
               &#xe61d;
             </MLink>
             {/* <MLink className="iconfont">&#xe66e;</MLink> */}
-            {/* <MLink className="iconfont">&#xec25;</MLink> */}
-          </MFoodShare>
+          {/* <MLink className="iconfont">&#xec25;</MLink> */}
         </Column>
       </MPosterWrap>
     </>
@@ -307,53 +350,58 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
         <Column maxWidth={1000}>
           <Whereabouts />
           <PosterTitle>
-            To the moon and back 😓
+            To da moon and back 😅
             <br />
-            Connect now 👀 to get your 💩 #loser poster 🤣 and share to your 👬 #loser frens 👭
+            Connect now 👀 to get your 💩 #loser poster 🤣 and share with your 👬 #loser frenz 👭
           </PosterTitle>
-          <ShareBtn
-            style={{
-              cursor: !holderCnt && !worth && !yields ? "no-drop" : "pointer",
-            }}
-            onClick={() => {
-              if (!holderCnt && !worth && !yields) {
-                return;
-              }
-              setIsShowImg(true);
-            }}
-          >
-            Share
-          </ShareBtn>
+          {account && holderCnt === "" && worth === "" && yields === "" ? (
+            <Loading>😅</Loading>
+          ) : (
+            <></>
+          )}
+
           {!drawData ? (
             <></>
           ) : (
-            <CanvasPoster
-              drawData={drawData}
-              success={(res: any) => {
-                setImgDetail(res);
-              }}
-            />
+            <>
+              <CanvasPoster
+                drawData={drawData}
+                success={(res: any) => {
+                  setImgDetail(res);
+                }}
+              />
+              <Images src={imgDetail} alt="" />
+              <BtnGroup>
+                <Down
+                  onClick={() => {
+                    downloadFileByBase64(imgDetail, "share");
+                  }}
+                >
+                  Download
+                </Down>
+                <ShareBtn
+                  style={{
+                    cursor:
+                      holderCnt === "" && worth === "" && yields === "" ? "no-drop" : "pointer",
+                  }}
+                  onClick={() => {
+                    if (holderCnt === "" && worth === "" && yields === "") {
+                      return;
+                    }
+                    window.open(
+                      `https://twitter.com/intent/tweet?url= Down bad, huh? Go check https://www.hook.cool/poster have some fun`,
+                      `_blank`,
+                      `width=600, height=450, toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, top=100,left=350`,
+                    );
+                  }}
+                >
+                  Share
+                </ShareBtn>
+              </BtnGroup>
+            </>
           )}
 
-          {/* {isShowImg ? <Images src={imgDetail} alt="" /> : <></>} */}
-          <Modal
-            show={isShowImg}
-            opacity={0.2}
-            toggleModal={() => {
-              setIsShowImg(false);
-            }}
-          >
-            <Images src={imgDetail} alt="" />
-            <Down
-              onClick={() => {
-                downloadFileByBase64(imgDetail, "share");
-              }}
-            >
-              Down
-            </Down>
-          </Modal>
-
-          <FoodShare>
+          {/* <FoodShare>
             <Link
               className="iconfont"
               onClick={() => {
@@ -366,9 +414,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
             >
               &#xe61d;
             </Link>
-            {/* <Link className="iconfont">&#xe66e;</Link> */}
-            {/* <Link className="iconfont">&#xec25;</Link> */}
-          </FoodShare>
+          </FoodShare> */}
         </Column>
       </PosterWrap>
     </>

@@ -114,6 +114,7 @@ const MShareBtn = styled.div`
 // `;
 const Images = styled.img`
   margin-top: 50px;
+  width: 50%;
 `;
 const Down = styled.div`
   width: 198px;
@@ -212,18 +213,18 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
       console.log(res.data.data.worth);
 
       setDrawData({
-        width: 360,
-        height: 667,
+        width: 1787,
+        height: 2495,
         backgroundColor: "#fff",
         views: [
           // local img
           {
             type: "image",
-            url: require("../../assets/po/po.png"),
+            url: require("../../assets/po/po.jpeg"),
             top: 0,
             left: 0,
-            width: 360,
-            height: 667,
+            width: 1787,
+            height: 2495,
           },
 
           // text
@@ -231,11 +232,11 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
             type: "text",
             content: (res.data.data.yield * 100).toFixed(5).slice(0, -3) + "%",
             //
-            fontSize: 50,
+            fontSize: 150,
             color: "#f7f7f7",
-            top: 190,
-            left: 30,
-            width: 200,
+            top: 1050,
+            left: 300,
+            width: 1787,
             lineNum: 1,
             lineHeight: 20,
             baseLine: "top",
@@ -244,11 +245,11 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
           {
             type: "text",
             content: "$" + formatNumber(Number(res.data.data.worth)),
-            fontSize: 50,
+            fontSize: 150,
             color: "#f7f7f7",
-            top: 280,
-            left: 30,
-            width: 200,
+            top: 1400,
+            left: 300,
+            width: 1787,
             lineNum: 1,
             lineHeight: 20,
             baseLine: "top",
@@ -257,11 +258,11 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
           {
             type: "text",
             content: formatNumber(res.data.data.holderCnt),
-            fontSize: 45,
+            fontSize: 150,
             color: "#f7f7f7",
-            top: 350,
-            left: 120,
-            width: 200,
+            top: 1600,
+            left: 620,
+            width: 1787,
             lineNum: 1,
             lineHeight: 20,
             baseLine: "top",

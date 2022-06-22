@@ -92,7 +92,7 @@ const WalletModal = ({ isShowModal, connect, setIsShowModal, fetching }: IWallet
       >
         <WalletBoxLeft>
           <Image src={walletconnect} />
-          {"connect"}
+          {"WalletConnect"}
         </WalletBoxLeft>
         <WalletBoxRight>
           <ArrowImage src={rightArrow} />

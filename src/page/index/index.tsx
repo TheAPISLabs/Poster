@@ -202,6 +202,8 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
   const [yields, setYields] = useState("");
 
   useEffect(() => {
+    console.log(account, "account");
+
     if (!account) {
       return;
     }

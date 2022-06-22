@@ -8,6 +8,8 @@ import Modal from "./Modal";
 import rightArrow from "../assets/rightArrow.png";
 import walletconnect from "../assets/walletconnect.png";
 import "../page/index/index.css";
+import { WalletConnectConnector } from "@web3-react/walletconnect-connector";
+import { useWeb3React } from "@web3-react/core";
 // const SConnectButton = styled(Button as any)`
 //   border-radius: 8px;
 //   font-size: ${fonts.size.medium};
@@ -73,7 +75,13 @@ interface IWalletModal {
 
 const WalletModal = ({ isShowModal, connect, setIsShowModal, fetching }: IWalletModal) => {
   const triedEager = useEagerConnect();
-
+  const { activate } = useWeb3React();
+  const WalletConnect = new WalletConnectConnector({
+    // @ts-ignore
+    rpcUrl: `https://mainnet.infura.io/v3/4915311f6ad74d7689d5e4e0dfa213a0`,
+    bridge: "https://bridge.walletconnect.org",
+    qrcode: true,
+  });
   return (
     <Modal
       show={isShowModal}
@@ -86,7 +94,8 @@ const WalletModal = ({ isShowModal, connect, setIsShowModal, fetching }: IWallet
       <MetamaskConnect setIsShow={setIsShowModal} triedEager={triedEager} />
       <SConnectButton
         onClick={() => {
-          connect();
+          //   connect();
+          activate(WalletConnect);
           setIsShowModal(false);
         }}
       >

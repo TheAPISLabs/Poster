@@ -316,7 +316,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
                       return;
                     }
                     window.open(
-                      `https://twitter.com/intent/tweet?url=Down bad, huh? Go check https://www.hook.cool/poster have some fun `,
+                      `https://twitter.com/intent/tweet?url=Down bad, huh? Go check https://poster.hook.cool/ have some fun `,
                       `_blank`,
                       `width=600, height=450, toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, top=100,left=350`,
                     );
@@ -390,7 +390,7 @@ export default function Home({ connected, killSession, connect, fetching }: IHom
                       return;
                     }
                     window.open(
-                      `https://twitter.com/intent/tweet?url= Down bad, huh? Go check https://www.hook.cool/poster have some fun`,
+                      `https://twitter.com/intent/tweet?url= Down bad, huh? Go check https://poster.hook.cool have some fun`,
                       `_blank`,
                       `width=600, height=450, toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, top=100,left=350`,
                     );

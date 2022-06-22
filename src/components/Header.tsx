@@ -190,8 +190,13 @@ const Header = ({ connected, killSession, connect, fetching }: IHeaderProps) => 
           </>
         )}
         <SActiveChain>
-          <a href="https://hook.cool/#/admin/dashboards/default">
-            <MAplImg src="https://etherscan.io/token/images/theapis_32.png" />
+          <a href="http://hook.cool/#/admin/dashboards/default">
+            {/* <p>Connected to</p>
+              <p>{activeChain}</p> */}
+            {/* <SConnectButton onClick={claimToken} left fetching={fetching}>
+            {"Claim"}
+          </SConnectButton> */}
+            <MAplImg src={aplImgs} />
           </a>
         </SActiveChain>
 
@@ -207,7 +212,7 @@ const Header = ({ connected, killSession, connect, fetching }: IHeaderProps) => 
     <>
       <SHeader>
         <SActiveChain>
-          <a href="https://hook.cool/#/admin/dashboards/default">
+          <a href="http://hook.cool/#/admin/dashboards/default">
             {/* <p>Connected to</p>
               <p>{activeChain}</p> */}
             {/* <SConnectButton onClick={claimToken} left fetching={fetching}>
